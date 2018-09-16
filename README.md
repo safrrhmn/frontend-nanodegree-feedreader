@@ -52,3 +52,6 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 1. Git clone https://github.com/safrrhmn/frontend-nanodegree-feedreader.git
 2. Download and install Node Package Manager(NPM). Follow [this](https://nodejs.org/en/) link for how to install NPM
 3. Donload Jasmine locally with `npm install --save-dev jasmine`
+4. Run index.html in server and click on the link at the end of the page to execute the test as shown in the image below
+
+![](img/run_spec.png)
