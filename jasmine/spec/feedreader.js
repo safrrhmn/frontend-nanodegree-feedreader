@@ -31,7 +31,7 @@ $(
 			it('Feeds contain non-empty URLs', function() {
 				allFeeds.forEach((feed) => {
 					expect(feed.url).toBeDefined();
-					expect(feed.url).toBeDefined();
+					expect(feed.url.length).toBeGreaterThan(0);
 				});
 			});
 
@@ -41,8 +41,8 @@ $(
          */
 			it('Feeds contain non-empty names', function() {
 				allFeeds.forEach((feed) => {
-					expect(feed.name !== undefined).toBeTruthy();
-					expect(feed.name !== '').toBeTruthy();
+					expect(feed.name).toBeDefined();
+					expect(feed.name).toBeTruthy();
 				});
 			});
 		});
@@ -93,19 +93,17 @@ $(
         */
 			let contentOne, contentSecond;
 			beforeEach(function(done) {
-				loadFeed(0, function(done) {
+				loadFeed(0, function() {
 					contentOne = $('.feed').contents();
-					done();
-					loadFeed(1, function(done) {
+					loadFeed(1, function() {
 						contentSecond = $('.feed').contents();
-						done();
 					});
+					done();
 				});
 			});
 
 			it('New Feed is Loaded by loadFeed() function', function(cb) {
 				expect(contentOne !== contentSecond).toBeTruthy();
-
 				cb();
 			});
 		});
